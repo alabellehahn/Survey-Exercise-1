@@ -1,0 +1,37 @@
+---
+title: "Code for Survey Exercise 1"
+author: "Alana LaBelle-Hahn" 
+date: "01/28/2022"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(dplyr)
+library(readr)
+```
+
+``` {r, Importing Data}
+
+leaders <- read_csv("leader_list_8_21.csv")
+View(leaders)
+```
+
+```{r, Random Sample}
+#Taking the first random sample
+sample_1 <- leaders %>%
+  sample_n(30)
+
+View(sample_1)
+
+
+#Taking the second random sample
+
+sample_2 <- leaders %>%
+  sample_n(30)
+
+View (sample_2)
+```
+
