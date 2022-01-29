@@ -26,6 +26,29 @@ sample_1 <- leaders %>%
 
 View(sample_1)
 
+# Counting the number of leaders born after 1950
+sample_1 %>%
+  filter(birthyear) %>%
+  count() %>%
+  mean(birthyear)
+
+# Finding measure of military career
+
+sample_1 %>%
+  filter(militarycareer != "-99") %>%
+  group_by(militarycareer) %>%
+  count()
+
+# Finding measure of gender
+sample_1 %>%
+  filter(gender != "-99") %>%
+  group_by(gender) %>%
+  count()
+
+```
+
+
+``` {r}
 
 #Taking the second random sample
 
@@ -33,5 +56,26 @@ sample_2 <- leaders %>%
   sample_n(30)
 
 View (sample_2)
+
+#Counting the number of leaders born after 1950
+
+sample_2 %>%
+  filter(birthyear >= 1950) %>%
+  count()
+
+# Finding measure of military career
+
+sample_2 %>%
+  filter(militarycareer != "-99") %>%
+  group_by(militarycareer) %>%
+  count()
+
+#Finding measure of female to male
+
+sample_2 %>%
+  filter(gender != "-99") %>%
+  group_by(gender) %>%
+  count()
+
 ```
 
